@@ -1,0 +1,21 @@
+{
+  "name": "catalyst",
+  "version": "1.0.0",
+  "description": "Create a Node-React-Redux-Saga boilerplate",
+  "main": "cli.js",
+  "dependencies": {
+    "colors": "^1.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "catalyst"
+  ],
+  "author": "Aneerudh Prabhakaran",
+  "bin": {
+    "catalyze": "./cli.js"
+  },
+  "license": "ISC"
+}
