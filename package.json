@@ -1,5 +1,5 @@
 {
-  "name": "catalyst",
+  "name": "@nevermore13/catalysty",
   "version": "1.0.0",
   "description": "Create a Node-React-Redux-Saga boilerplate",
   "main": "cli.js",
