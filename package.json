@@ -1,6 +1,6 @@
 {
   "name": "@nevermore13/catalysty",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A workspace essential tool for all devs",
   "main": "cli.js",
   "dependencies": {
