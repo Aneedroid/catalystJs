@@ -33,6 +33,7 @@ else{
     const contents = shell.cat('~/.bash_profile');
     shell.echo('\n-----Your bash profile-----\n');
     shell.echo(contents);
-    shell.echo('\nStay lazy and innovate!');
+    shell.echo('\nClose this terminal and open a new one to make sure the changes are reflected!');
+    shell.echo('\nStay lazy and innovate!\n');
     shell.exit(1)
 }
