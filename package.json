@@ -1,12 +1,11 @@
 {
   "name": "@nevermore13/catalysty",
-  "version": "1.0.0",
-  "description": "Create a Node-React-Redux-Saga boilerplate",
+  "version": "2.0.0",
+  "description": "A workspace essential tool for all devs",
   "main": "cli.js",
   "dependencies": {
-    "colors": "^1.3.2"
+    "shelljs": "^0.8.2"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

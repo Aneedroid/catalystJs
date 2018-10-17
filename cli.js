@@ -1,18 +1,38 @@
 #!/usr/bin/env node
-const util = require('util');
-const exec = util.promisify(require('child_process').exec);
-const colors = require('colors');
+const shell = require('shelljs');
 
-const catalyze = async (command) => {
-  const { error, stdout, stderr } = await exec(command);
-  if (error) {
-    console.red(`Error while executing - : ${error}`);
-    return;
-  }
-  if(stderr)
-      console.log(colors.yellow(`${stderr}`));
-  else
-    console.log(colors.green(`${stdout}`));
-};
+shell.touch('~/.bash_profile');
+shell.echo('Setting Git aliases..');
 
-catalyze('git clone https://github.com/Cl1kx/dawnJs.git');
+if (!shell.which('git')) {
+    shell.echo('I see git is not installed in your system. Please install Git and run this script! :)');
+    shell.exit(1)
+}
+else{
+    const gstFound = shell.grep('--','gst','~/.bash_profile');
+    const gpomFound = shell.grep('--','gpom','~/.bash_profile');
+    const gcmFound = shell.grep('--','gcm','~/.bash_profile');
+    const gprFound = shell.grep('--','gpr','~/.bash_profile');
+    const gcaFound = shell.grep('--','gca','~/.bash_profile');
+
+    if(gpomFound.stdout === '\n')
+        shell.echo('alias gpom=\"git push origin master\"').toEnd('~/.bash_profile');
+
+    if(gstFound.stdout === '\n')
+        shell.echo('alias gst=\"git status\"').toEnd('~/.bash_profile');
+
+    if(gcmFound.stdout === '\n')
+        shell.echo('alias gcm=\"git commit -m\"').toEnd('~/.bash_profile');
+
+    if(gprFound.stdout === '\n')
+        shell.echo('alias gpr=\"git pull -r\"').toEnd('~/.bash_profile');
+
+    if(gcaFound.stdout === '\n')
+        shell.echo('alias gca=\"git checkout .\"').toEnd('~/.bash_profile');
+
+    const contents = shell.cat('~/.bash_profile');
+    shell.echo('\n-----Your bash profile-----\n');
+    shell.echo(contents);
+    shell.echo('\nStay lazy and innovate!');
+    shell.exit(1)
+}
