@@ -25,15 +25,12 @@ npm i -g @nevermore13/catalysty
 catalyze
 ```
 
-## Built With
-
-* [ShellJS](https://github.com/shelljs/shelljs) - Used to execute unix like commands over Node.
-
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Third party libraries
+
+* [ShellJS](https://github.com/shelljs/shelljs) - Used to execute unix like commands over Node.
 
 This project uses third party libraries - see the [LICENSE-THIRD-PARTY.md](LICENSE-THIRD-PARTY.md) file for details
