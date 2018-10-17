@@ -1,8 +1,8 @@
 # Catalysty
 
-Laziness level 1: Tired of typing Git commands? :white-check-mark: <br/>
-Laziness level 2: Decided to set git aliases. Wait, what? I NEED to do it? :white-check-mark: <br/>
-Laziness level 3: Are there any scripts for this? :white-check-mark: <br/>
+Tired of typing Git commands? <br/>
+Decided to set git aliases. Wait, what? I NEED to do it? <br/>
+Are there any scripts for this? <br/>
 
 You have landed in the right place!<br/>
 
