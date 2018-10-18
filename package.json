@@ -1,6 +1,6 @@
 {
   "name": "@nevermore13/catalysty",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "A workspace essential tool for all devs",
   "main": "cli.js",
   "dependencies": {
@@ -16,6 +16,10 @@
   "author": "Aneerudh Prabhakaran",
   "bin": {
     "catalyze": "./cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Cl1kx/catalystJs.git"
   },
   "license": "MIT"
 }
