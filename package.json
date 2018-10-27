@@ -7,7 +7,8 @@
     "shelljs": "^0.8.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ."
   },
   "keywords": [
     "catalysty",
@@ -21,5 +22,10 @@
     "type": "git",
     "url": "https://github.com/Cl1kx/catalystJs.git"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  }
 }
