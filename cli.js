@@ -1,7 +1,12 @@
 #!/usr/bin/env node
 const shell = require('shelljs');
 
-shell.touch('~/.bash_profile');
+const { commandConfig } = require('./config/commands');
+const { isAliasFoundInFile } = require('./helpers/cli-helpers');
+
+const fileName = '~/.bash_profile';
+
+shell.touch(fileName);
 shell.echo('Setting Git aliases..');
 
 if (!shell.which('git')) {
@@ -9,31 +14,17 @@ if (!shell.which('git')) {
     shell.exit(1)
 }
 else{
-    const gstFound = shell.grep('--','gst','~/.bash_profile');
-    const gpomFound = shell.grep('--','gpom','~/.bash_profile');
-    const gcmFound = shell.grep('--','gcm','~/.bash_profile');
-    const gprFound = shell.grep('--','gpr','~/.bash_profile');
-    const gcaFound = shell.grep('--','gca','~/.bash_profile');
 
-    if(gpomFound.stdout === '\n')
-        shell.echo('alias gpom=\"git push origin master\"').toEnd('~/.bash_profile');
+    Object.keys(commandConfig).forEach((alias) => {
+        if(!isAliasFoundInFile(alias ,fileName))
+            shell.echo(commandConfig[alias]).toEnd(fileName);
+    });
 
-    if(gstFound.stdout === '\n')
-        shell.echo('alias gst=\"git status\"').toEnd('~/.bash_profile');
+    const contents = shell.cat(fileName);
 
-    if(gcmFound.stdout === '\n')
-        shell.echo('alias gcm=\"git commit -m\"').toEnd('~/.bash_profile');
-
-    if(gprFound.stdout === '\n')
-        shell.echo('alias gpr=\"git pull -r\"').toEnd('~/.bash_profile');
-
-    if(gcaFound.stdout === '\n')
-        shell.echo('alias gca=\"git checkout .\"').toEnd('~/.bash_profile');
-
-    const contents = shell.cat('~/.bash_profile');
     shell.echo('\n-----Your bash profile-----\n');
     shell.echo(contents);
-    shell.echo('\nClose this terminal and open a new one to make sure the changes are reflected!');
-    shell.echo('\nStay lazy and innovate!\n');
+    shell.echo('Close this terminal and open a new one to make sure the changes are reflected!\n');
+
     shell.exit(1)
 }
