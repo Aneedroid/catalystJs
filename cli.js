@@ -13,7 +13,7 @@ shell.touch(fileName);
 shell.echo('\nSetting Git aliases...\n'.green.bold);
 
 if (!shell.which('git')) {
-  shell.echo('I see git program is not installed in your system. Please install Git and run this script! :)'.red);
+  shell.echo('I see Git program is not installed in your system. Please install Git and run this script! :)'.red);
   shell.exit(1);
 } else {
   Object.keys(commandConfig).forEach((alias) => {
